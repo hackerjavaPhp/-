@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id = "program"></div>
+    <script type="text/babel">
+      var Check = React.createClass({
+        getInitialState:function()
+        {
+          return {checked: true};
+        },
+        HandleCheck:function()
+        {
+          this.setState({checked: !this.state.checked});
+        },
+        render:function()
+        {
+          var message;
+          if(this.state.checked)
+          {
+            message = "Выбран";
+          }
+          else
+          {
+            message = "Не выбран";
+          }
+          return (
+            <div>
+              <input type = "checkbox" onChange= {this.HandleCheck} defaultChecked = {this.state.checked} />
+              <p>Чекбокс {message}</p>
+            </div>
+          );
+        }
+      });
+
+      const app = document.getElementById("program");
+      ReactDOM.render(
+        <Check/>,
+        app
+      );
+    </script>
+  </body>
+</html>
