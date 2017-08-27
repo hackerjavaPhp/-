@@ -1,49 +1,92 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Hello World</title>
-    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
-    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-  </head>
-  <body>
-    <div id = "program"></div>
-    <script type="text/babel">
-      var Check = React.createClass({
-        getInitialState:function()
-        {
-          return {checked: true};
-        },
-        HandleCheck:function()
-        {
-          this.setState({checked: !this.state.checked});
-        },
-        render:function()
-        {
-          var message;
-          if(this.state.checked)
-          {
-            message = "Выбран";
-          }
-          else
-          {
-            message = "Не выбран";
-          }
-          return (
-            <div>
-              <input type = "checkbox" onChange= {this.HandleCheck} defaultChecked = {this.state.checked} />
-              <p>Чекбокс {message}</p>
-            </div>
-          );
-        }
-      });
 
-      const app = document.getElementById("program");
-      ReactDOM.render(
-        <Check/>,
-        app
-      );
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
+    <link rel = "stylesheet" href = "style.css" type = "text/css">
+</head>
+<body>
+    <div id='content'></div>
+
+    <script type="text/babel">
+        var CONTACTS = [
+            {
+                id: 1,
+                name: 'Darth Vader',
+                phoneNumber: '+250966666666',
+                image: 'img/darth.gif'
+            }, {
+                id: 2,
+                name: 'Princess Leia',
+                phoneNumber: '+250966344466',
+                image: 'img/leia.gif'
+            }, {
+                id: 3,
+                name: 'Luke Skywalker',
+                phoneNumber: '+250976654433',
+                image: 'img/luke.gif'
+            }, {
+                id: 4,
+                name: 'Chewbacca',
+                phoneNumber: '+250456784935',
+                image: 'img/chewbacca.gif'
+            }
+        ];
+
+        var Contact = React.createClass({
+            render:function()
+            {
+                return (
+                    <li className = "contact">
+                        <img className = "contact-image" src = {this.props.image} 
+                             width="60px" 
+                             height="60px"/>
+                        <div className = "contact-info">
+                            <div className = "contact-name">{this.props.name}</div>
+                            <div className = "number">{this.props.phoneNumber}</div>
+                        </div>
+                    </li>
+                );
+            }
+        });
+
+        var ContactsList = React.createClass({
+            render: function() {
+                return (
+                   <div className = "contacts">
+                        <input type="text" 
+                        className = "search-field"/>
+                        <ul className = "contacts-list">
+                            {
+                                CONTACTS.map(function(el){
+                                return (
+                                    <div>
+                                        <Contact 
+                                        key = {el.id} 
+                                        name = {el.name} 
+                                        phoneNumber = {el.phoneNumber} 
+                                        image = {el.image} 
+                                        />
+                                    </div>    
+                                    );
+                                })
+                            }
+                        </ul>
+                   </div>  
+                );
+            }
+        });
+
+
+        ReactDOM.render(
+           <ContactsList/>
+           ,
+            document.getElementById('content')
+        );
     </script>
-  </body>
+</body>
 </html>
