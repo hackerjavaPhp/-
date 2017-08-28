@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,11 +54,32 @@
         });
 
         var ContactsList = React.createClass({
+            getInitialState:function()
+            {
+                return {
+                    dispayedContacts:CONTACTS
+                };
+            }
+            ,
+            handleSearch:function(event)
+            {
+                var searchQuery = event.target.value.toLowerCase(); 
+                var displayedContacts = CONTACTS.filter(function(){
+                    var searchValue = el.name.LowerCase();
+                    return searchValue.indexOf(searchQuery) !==1 ;
+                })
+
+                console.log(dispayedContacts); 
+            }
+            ,
             render: function() {
                 return (
                    <div className = "contacts">
-                        <input type="text" 
-                        className = "search-field"/>
+                        <input 
+                        type="text" 
+                        className = "search-field"
+                        onChange = {this.handleSearch} 
+                        />
                         <ul className = "contacts-list">
                             {
                                 CONTACTS.map(function(el){
@@ -68,7 +88,7 @@
                                         <Contact 
                                         key = {el.id} 
                                         name = {el.name} 
-                                        phoneNumber = {el.phoneNumber} 
+                                        phoneNumber = {el.phoneNumber}
                                         image = {el.image} 
                                         />
                                     </div>    
