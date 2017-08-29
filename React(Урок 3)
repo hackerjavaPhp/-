@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+    let value = 0;
+
+      class HelloWorld extends React.Component
+      {
+
+        getUrl()
+        {
+          return "https://www.apple.com";
+        }
+
+        render()
+        {
+          if(value === 1)
+          {
+                  let my = "Vlad";
+                  return (<h1 title = {this.props.title}>Hi , my name is {my} !My site {
+                  this.getUrl()}</h1>);
+          }
+          else
+          {
+                  let my = "Elena";
+                  return (<h1 title = {this.props.title}>Hi , my name is {my} !My site {
+                  this.getUrl()}</h1>);
+          }
+        }
+      }
+
+      ReactDOM.render(
+        <HelloWorld title = "Apple.com"/> ,
+        document.getElementById('root')
+      );
+
+    </script>
+  </body>
+</html>
