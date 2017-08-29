@@ -16,16 +16,28 @@
        class HelloWorld extends React.Component
        {
             render() {
-                return React.createElement("div" , null , h1 , h1);
+                return React.createElement("h1" , null , "Hello my name is " + this.props.petName);
             }
        }
 
        ReactDOM.render(
             React.createElement("div" ,
                                  null ,
-                                 React.createElement(HelloWorld , null),
-                                 React.createElement(HelloWorld , null),
-                                 React.createElement(HelloWorld , null)
+                                 React.createElement(HelloWorld , {
+                                  id: "dog",
+                                  petName: "Helga",
+                                  title: "Taksa"
+                                 }),
+                                 React.createElement(HelloWorld , {
+                                  id: "sanil",
+                                  petName: "Herman",
+                                  title: "Anatina"
+                                 }),
+                                 React.createElement(HelloWorld , {
+                                  id: "robot",
+                                  petName: "Mitya",
+                                  title: "Mitia"
+                                 })
                                  ) ,
                                  document.getElementById("content") 
        )
