@@ -21,6 +21,31 @@
           }
           this.clockLauncher();
         }
+        /*
+        componentWillMount(){}
+        componentDidMount(){}
+
+        componentWillReceiveProps(){}
+        shouldComponentUpdate(){}
+        componentWillUpdate(){}
+        componentDidUpdate(){}
+        */
+
+        componentWillMount()
+        {
+          console.log("Привет");
+        }
+
+        componentDidMount()
+        {
+          console.log("Пока");
+        }
+
+        componentWillUpdate()
+        {
+          console.log("УРА , будет update");
+        }
+
 
         clockLauncher()
         {
