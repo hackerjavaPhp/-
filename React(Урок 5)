@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+        /*Пусть пока будет =)
+        componentWillMount(){}
+        componentDidMount(){}
+
+        componentWillReceiveProps(){}
+        shouldComponentUpdate(){}
+        componentWillUpdate(){}
+        componentDidUpdate(){}
+        */
+
+
+
+      class Clock extends React.Component
+      {
+        constructor(props)
+        {
+          super(props);
+          this.state = {
+            currentTime:(new Date()).toLocaleString()
+          }
+          this.clockLauncher();
+        }
+
+        componentWillMount()
+        {
+          console.log("Привет");
+        }
+
+        componentDidMount()
+        {
+          console.log("Пока");
+          this.clockLauncher();
+        }
+
+        componentWillUpdate()
+        {
+          console.log("УРА , будет update");
+          clearInterval(this.state.diapazon);
+        }
+
+
+        clockLauncher()
+        {
+          let diapazon = setInterval(() => {
+            this.setState({
+              currentTime:(new Date()).toLocaleString()
+            })
+          } , 1000)
+          this.setState({diapazon: diapazon});
+        }
+
+        render()
+        {
+          return <div>{this.state.currentTime}</div>
+        }
+
+      }
+
+      let seconds = 5;
+      let interval = setInterval(() => {
+        if(seconds === 0)
+        {
+           ReactDOM.render(
+            <div>
+              <p>Clock has been removed </p>
+            </div> ,
+            document.getElementById('root')
+            );
+            clearInterval(interval);
+        }
+        else
+        {
+           ReactDOM.render(
+            <Clock/> ,
+            document.getElementById('root')
+           );
+
+           seconds--;
+        }
+      } , 1000)
+
+    </script>
+  </body>
+</html>
