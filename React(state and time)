@@ -19,6 +19,16 @@
           this.state = {
             currentTime:(new Date()).toLocaleString()
           }
+          this.clockLauncher();
+        }
+
+        clockLauncher()
+        {
+          setInterval(() => {
+            this.setState({
+              currentTime:(new Date()).toLocaleString()
+            })
+          } , 1000)
         }
 
         render()
