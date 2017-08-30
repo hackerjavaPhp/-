@@ -10,7 +10,12 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
-        
+      
+    const DigitalClock = function(props)
+    {
+      return <div>{props.time}</div>;
+    }
+
       class Clock extends React.Component
       {
         constructor(props)
@@ -33,7 +38,7 @@
 
         render()
         {
-          return <div>{this.state.currentTime}</div>
+          return (<div><DigitalClock time = {this.state.currentTime} /></div>)
         }
 
       }
