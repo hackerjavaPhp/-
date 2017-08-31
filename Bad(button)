@@ -11,7 +11,7 @@
     <div id="root"></div>
     <script type="text/babel">
           
-    class Button extends React.Component
+    class Content extends React.Component
     {
 
     constructor(props)
@@ -28,14 +28,39 @@
 
       render()
       {
+        return (<div>
+          <Button handler = {this.handleClick}/>
+          <Text counter = {this.state.counter}/>
+        </div>);
+      }
+    }
+
+    class Button extends React.Component
+    {
+      render()
+      {
         return (
-          <button onClick={this.handleClick}>click me (сколько раз ЖМЯКНУЛИ - {this.state.counter})</button>
+          <button onClick={this.props.handler}>click me</button>
         );
       }
     }
 
+    class Text extends React.Component
+    {
+       render()
+      {
+        return (
+          <div>
+              click me (сколько раз ЖМЯКНУЛИ - {this.props.counter})      
+          </div>
+        );
+      }
+    }
+
+
+
       ReactDOM.render(
-        <Button/> , 
+        <Content/> , 
         document.getElementById("root")
       )
 
