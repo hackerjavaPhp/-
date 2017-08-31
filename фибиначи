@@ -11,11 +11,7 @@
   var n = false;
   for(var i = 0 ; i < 12 ; i++)
   { 
-    if( n == false){
-    console.log(b);
-    }
     n = a + b;
-
     b = a;
     a = n;
     console.log(n)
