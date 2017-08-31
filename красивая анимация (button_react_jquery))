@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+          
+    class Content extends React.Component
+    {
+
+    constructor(props)
+    {
+      super(props);
+      this.handleClickHide = this.handleClickHide.bind(this)
+      this.handleClickReveal = this.handleClickReveal.bind(this)
+    }
+
+
+    handleClickHide()
+    {
+      $("#text").fadeOut("slow");
+    }
+
+    handleClickReveal()
+    {
+      $("#text").fadeIn("slow");
+    }
+    
+
+      render()
+      {
+        return (<div>
+          <Button 
+          handlerHide = {this.handleClickHide}
+          handlerReveal = {this.handleClickReveal}
+          />
+          <Text/>
+        </div>);
+      }
+    }
+
+    class Button extends React.Component
+    {
+      render()
+      {
+        return (
+          <div>
+            <button onClick={this.props.handlerHide}>Hide</button>
+            <button onClick={this.props.handlerReveal}>Reveal</button>
+          </div>
+        );
+      }
+    }
+
+    class Text extends React.Component
+    {
+       render()
+      {
+        return (
+          <div id = "text">
+              This is number random _)
+          </div>
+        );
+      }
+    }
+
+
+
+      ReactDOM.render(
+        <Content/> , 
+        document.getElementById("root")
+      )
+
+    </script>
+
+
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
+  </body>
+</html>
