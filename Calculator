@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Калькулятор</title>
+<meta charset="UTF-8"/>
+<style>
+*
+{
+margin: 0;
+padding: 0;
+}
+
+#calculate
+{
+width: 202px;
+height: 263px;
+background-color: #D9E4F1;
+border:1px solid #D9E4F1;
+margin: 20px auto;
+}
+
+#answer
+{
+width: 189px;
+height: 28px;
+background-color: #F8FBFE;
+margin: 10px auto;
+font-size: 26px;
+padding: 10px 0px;
+overflow: hidden;
+}
+
+#buttons
+{
+width: 191px;
+height:184px;
+background-color: #F8FBFE;
+margin: 6px;
+}
+#buttons button
+{
+width: 32px;
+height:24px;
+background-color: white;
+margin: 6px;
+}
+#buttons button:hover
+{
+background-color:#D9E4F1 ;
+color:white
+}
+#buttons input
+{
+width: 80px;
+height:24px;
+background-color: white;
+margin: 6px;
+background-color: chartreuse;
+color:white
+}
+</style>
+</head>
+<body>
+<div id = "calculate">
+<div id = "answer">
+
+</div>
+<div id = "buttons">
+<button>0</button>
+<button>1</button>
+<button>2</button>
+<button>3</button>
+<button>4</button>
+<button>5</button>
+<button>6</button>
+<button>7</button>
+<button>8</button>
+<button>9</button>
+<button>-</button>
+<button>+</button>
+<button>/</button>
+<button>*</button>
+<input type = "button" value="Ответ">
+</div>
+</div>
+<script>
+(function(){
+
+function up(){
+mass = [];
+mass[0] = answer.innerHTML;
+d = "";
+bool = true
+}
+
+var buttons = document.getElementsByTagName("button"),
+input = document.getElementsByTagName("input"),
+bool = true,
+a = "",
+d = "",
+mass = [];
+function click(elem)
+{
+for(var i = 0 ; i < elem.length ; i++)
+{
+elem[i].onclick = function()
+{
+click2(this);
+}
+}
+}
+
+function click2(elem)
+{
+if(elem.innerHTML.trim() < 10)
+{
+var n = answer.innerHTML = answer.innerHTML + elem.innerHTML;
+a = answer.innerHTML.trim();
+console.log(a)
+}
+else if((elem.innerHTML.trim() == "-" || "+"|| "*" || "/") && bool == true)
+{
+if(answer.innerHTML.trim().length >= 1)
+{
+answer.innerHTML = answer.innerHTML + elem.innerHTML;
+console.log(answer.innerHTML.trim().length >= 1)
+
+bool = false;
+}
+}
+}
+
+function click3()
+{
+input[0].onclick = function()
+{
+for(var n = 0 ; n < a.length ; n++)
+{
+if(a[n] === "-")
+{
+d = "-";
+}
+else if(a[n] === "+")
+{
+d = "+";
+}
+else if(a[n] === "/")
+{
+d = "/";
+}
+else if(a[n] === "*")
+{
+d = "*";
+}
+}
+console.log(d);
+if(d == "*")
+{
+console.log(mass = a.split("*"));
+answer.innerHTML = ((Number(mass[0]) * Number(mass[1]))).toFixed(2);
+up();
+}
+else if(d == "/")
+{
+console.log(mass = a.split("/"));
+answer.innerHTML = ((Number(mass[0]) / Number(mass[1]))).toFixed(2);
+up();
+}
+else if(d == "+")
+{
+console.log(mass = a.split("+"));
+answer.innerHTML = ((Number(mass[0]) + Number(mass[1]))).toFixed(2);
+up();
+}
+else if(d == "-")
+{
+console.log(mass = a.split("-"));
+answer.innerHTML = ((Number(mass[0]) - Number(mass[1]))).toFixed(2);
+up();
+}
+console.log(d);
+}
+}
+
+
+click3();
+click(buttons);
+
+})()
+</script>
+</body>
+</html>
