@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      
+      class Content extends React.Component
+      {
+        constructor(props)
+        {
+          super(props);
+          this.handleRadio = this.handleRadio.bind(this);
+          this.state = {
+              radioGroup:{
+              angular:false , 
+              react:true ,
+              ember:false
+            }
+          }
+        }
+
+      handleRadio()
+      {
+        let object = {};
+        object[event.target.value] = event.target.checked;
+        this.setState({radioGroup:object})
+      }
+
+
+      render()
+      {
+        return ( 
+               <form> <input type="radio" value="angular" checked={this.state.radioGroup.angular ? true: false} onChange={this.handleRadio}/> <input type="radio" value="react" checked={this.state.radioGroup.react ? true: false} onChange={this.handleRadio}/> <input type="radio" value="ember" checked={this.state.radioGroup.ember ? true: false} onChange={this.handleRadio}/> </form>﻿
+               );
+      }
+
+    } 
+
+      ReactDOM.render(
+        <Content/> , 
+        document.getElementById("root")
+      )
+
+    </script>
+
+
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
+  </body>
+</html>
