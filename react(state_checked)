@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <link rel = "stylesheet" href = "style.css" type = "text/css"/>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+    var Check = React.createClass({
+
+        getInitialState:function()
+        {
+          return {checked: true};
+        }
+        ,
+        func:function()
+        {
+          this.setState({checked: !this.state.checked})
+        }
+        ,
+        render:function()
+        {
+          var message;
+          if(this.state.checked)
+          {
+            message = "выбран"
+          }
+          else
+          {
+             message = "не выбран"
+          }
+          return(
+              <div>
+                <input defaultChecked={this.state.checked} onChange= {this.func} type = "checkbox"/>
+                <p>Чекбокс {message}</p>
+              </div>
+          );
+        }
+
+    });
+
+    const app = document.getElementById("root");
+
+    ReactDOM.render( 
+
+      <div>
+        <Check/>
+      </div>
+     , 
+      app
+     );
+    </script>
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous">
+    </script>
+  </body>
+</html>
