@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <link rel = "stylesheet" href = "style.css" type = "text/css"/>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+        var Task = React.createClass({
+          getInitialState:function()
+          {
+            return {edit: false};
+          },
+          edit:function()
+          {
+            this.setState({edit:true})
+          },
+          remove:function()
+          {
+            alert("Нажата кнопка удалить !!!");
+          },
+          save:function()
+          {
+            var value = this.refs.newTxt.value;
+                alert(value);
+            this.setState({edit:false})
+          }
+          ,
+          rendNorm:function()
+          {
+             return(
+            <div className = "box">
+              <div className = "text">{this.props.children}</div>
+              <button onClick = {this.edit} className = "btn linht">Редактировать</button>
+              <button onClick = {this.remove} className = "btn red">Удалить</button>
+            </div>);
+          }
+          ,
+           rendEdit:function()
+          {
+             return(
+            <div className = "box">
+              <textarea ref="newTxt" defaultValue = {this.props.children}></textarea>
+              <button onClick = {this.save} className = "btn success">Save</button>
+            </div>);
+          }
+          ,
+
+          render:function()
+          {
+            if(this.state.edit)
+            {
+              return this.rendEdit();
+            }
+            else
+            {
+               return this.rendNorm();
+            }
+          }
+        });
+
+        const app = document.getElementById("root");
+
+        ReactDOM.render(
+
+          <div className = "field">
+            <Task>Hey , it is me!</Task>
+            <Task>Task number 2!</Task>
+            <Task>Hello World!</Task>
+          </div>
+
+         , app)
+    </script>
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous">
+    </script>
+  </body>
+</html>
