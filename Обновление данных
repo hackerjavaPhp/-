@@ -1,0 +1,48 @@
+Обновление данных
+
+<?PHP
+$server = "localhost";
+$name_user = "hacker";
+$password_user = "hacker";
+$db_user = "testDB";
+$sql = "UPDATE base SET name = 'Vladic' WHERE name = 'Vlad' ";
+# $sql = "REPLACE INTO base VALUES (234,'SUPER_VLAD,SHERBA','324234234234'),(234,'SUPER_VLAD,SHERBA','324234234234')";
+
+#new msqli obj...
+/*
+$conn = new mysqli($server,$name_user,$password_user,$db_user);
+if($conn -> query($sql) == True)
+{
+echo "GOOD";
+}
+else
+{
+echo "It's don't good!)";
+}
+$conn -> clsoe();
+*/
+
+##PROCEDURAL
+/*
+$conn = mysqli_connect($server,$name_user,$password_user,$db_user);
+if(mysqli_multi_query($conn,$sql) == True)
+{
+echo "Good SQL";
+}
+else
+{
+echo 'No good Sql';
+};
+mysqli_close($conn);
+*/
+
+#new PDO ... obj...
+try {
+$conn = new PDO("mysql:host=$sever;dbname=$db_user", $name_user, $password_user);
+$conn->exec($sql);
+echo "GOOD";
+}
+catch (PDOException $e)
+{
+echo $sql .$e -> getMessage();
+}
