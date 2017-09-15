@@ -80,3 +80,17 @@ INSERT INTO profiles_s(user_id,name,last_name,photo_name,about)
               "he.img",
               "web-developer"
 );
+
+/* 
+
+	BEGIN;
+update users set balance = balance + 100 WHERE id = 1;
+update users set balance = balance - 100 WHERE id = 2;
+update users set balance = balance + 50 WHERE id = 3;
+
+
+SELECT * FROM users;
+ROLLBACK;
+SELECT * FROM users;
+	
+*/
