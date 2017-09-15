@@ -29,8 +29,8 @@ INSERT INTO users (username,passwords,email,created_at,updated_at,balance)
               "Vlad",
            	  "12121997ddd",
            	  "hackerJava@gmail.com",
-           	  dateTime("now") ,
-           	  dateTime("now") ,
+           	  "2017-03-23" ,
+           	  "2017-03-24" ,
               470
        );
        
@@ -48,8 +48,8 @@ INSERT INTO users (username,passwords,email,created_at,updated_at,balance)
               "Elena",
            	  "2212213f3f34",
            	  "Elena234@gmail.com",
-           	  dateTime("now") ,
-           	  dateTime("now") ,
+           	  "2017-03-24" ,
+           	  "2017-03-25" ,
               123
        );
        
@@ -67,8 +67,8 @@ INSERT INTO users (username,passwords,email,created_at,updated_at,balance)
               "Jon",
            	  "f23fs3fg",
            	  "Java@gmail.com",
-           	  dateTime("now") ,
-           	  dateTime("now") ,
+           	  "2017-03-27" ,
+           	  "2017-03-28" ,
               270
        );
        
@@ -79,4 +79,4 @@ INSERT INTO profiles_s(user_id,name,last_name,photo_name,about)
               "MINI",
               "he.img",
               "web-developer"
-        );   
+);
