@@ -1,0 +1,82 @@
+DROP TABLE IF EXISTS profiles_s;
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users (
+			
+    		id int(11) PRIMARY KEY AUTO_INCREMENT , 
+    		username VARCHAR(32) NOT NULL UNIQUE , 
+    		passwords VARCHAR(255) NOT NULL , 
+    		email VARCHAR(255) NOT NULL UNIQUE, 
+    		created_at DATETIME NOT NULL , 
+    		updated_at DATETIME NOT NULL ,
+    		balance DECIMAL(18 , 2) NOT NULL
+);
+
+CREATE TABLE profiles_s(
+			
+    		id INT PRIMARY KEY AUTO_INCREMENT , 
+    		user_id INT NOT NULL , 
+    		name VARCHAR(255) ,
+    		last_name VARCHAR(255) ,
+    		photo_name VARCHAR(255) , 
+    		about TEXT , 
+    		FOREIGN KEY(user_id) REFERENCES users(id)
+    
+);
+
+INSERT INTO users (username,passwords,email,created_at,updated_at,balance)
+	   VALUES(
+              "Vlad",
+           	  "12121997ddd",
+           	  "hackerJava@gmail.com",
+           	  dateTime("now") ,
+           	  dateTime("now") ,
+              470
+       );
+       
+INSERT INTO profiles_s(user_id,name,last_name,photo_name,about) 
+		VALUES(
+       		  1 , 
+              "Alexsandr",
+              "JOW",
+              "herhy.img",
+              "web-developer"
+        );
+        
+INSERT INTO users (username,passwords,email,created_at,updated_at,balance)
+	   VALUES(
+              "Elena",
+           	  "2212213f3f34",
+           	  "Elena234@gmail.com",
+           	  dateTime("now") ,
+           	  dateTime("now") ,
+              123
+       );
+       
+INSERT INTO profiles_s(user_id,name,last_name,photo_name,about) 
+		VALUES(
+       		  2 , 
+              "Alex",
+              "kok",
+              "hfsedefefe.img",
+              "Programmer"
+        );
+        
+INSERT INTO users (username,passwords,email,created_at,updated_at,balance)
+	   VALUES(
+              "Jon",
+           	  "f23fs3fg",
+           	  "Java@gmail.com",
+           	  dateTime("now") ,
+           	  dateTime("now") ,
+              270
+       );
+       
+INSERT INTO profiles_s(user_id,name,last_name,photo_name,about) 
+		VALUES(
+       		  3 , 
+              "Alexsandr",
+              "MINI",
+              "he.img",
+              "web-developer"
+        );   
