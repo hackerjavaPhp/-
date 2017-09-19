@@ -1,0 +1,30 @@
+<?php
+	
+	function rec_func($var_number)
+	{
+		static $mass = [];
+		if($var_number != 0)
+		{
+			echo $var_number;
+			$mass[] = $var_number;
+			$var_number--;
+			rec_func($var_number);
+		}
+		else
+		{
+			echo "ВСЕ! <br>";
+			print_r($mass);
+			$state = 1;
+			foreach ($mass as $key => $value) {
+				# code...
+				$state *= $value;
+				echo $state . "<br>";
+			}
+		}
+
+
+	}
+
+	rec_func(5);
+	
+?>
