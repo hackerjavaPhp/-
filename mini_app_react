@@ -64,16 +64,49 @@
           }
         });
 
+        var Field = React.createClass({
+          getInitialState:function()
+          {
+            return {tasks:[
+              "Необходимо купить молоко!" , 
+              "Надо почистить зубы" ,
+              "Просто отдохнуть"
+            ]}
+          },
+          deleteBlock:function(i)
+          {
+            var arr = this.state.task;
+                arr.splice(i , 1);
+                this.setState({tasks:arr});
+          }
+          ,
+          updateText:function(text,i)
+          {
+            var arr = this.state.tasks;
+            arr[i] = text;
+            this.setState({tasks:arr});
+          }
+          ,
+          eachTask:function(item , i){
+            return(<Task key = {i} index = {i}>{item}</Task>);
+          }
+          ,
+          render:function()
+          {
+            return (
+               <div className = "field">
+                  {
+                    this.state.tasks.map(this.eachTask)
+                  }
+               </div>
+            )
+          }
+        });
+
         const app = document.getElementById("root");
 
         ReactDOM.render(
-
-          <div className = "field">
-            <Task>Hey , it is me!</Task>
-            <Task>Task number 2!</Task>
-            <Task>Hello World!</Task>
-          </div>
-
+          <Field/>
          , app)
     </script>
     <script
