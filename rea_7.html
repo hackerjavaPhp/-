@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
+
+    <style>
+        *
+        {
+            margin: 0;
+            padding:0;
+        }
+
+        body
+        {
+            background-color: #9a8893;
+            font-family: 'Titillium Web', sans-serif;
+        }
+
+        .container
+        {
+            width: 1024px;
+            margin: 0 auto;
+        }
+
+        .screen-phone
+        {
+            height: 1334px;
+            width: 750px;
+            background: url(img/lay.jpg) no-repeat ;
+            margin: 0 auto;
+        }
+
+        .screen-phone-menu
+        {
+            padding-top: 323px;
+            list-style-type: none;
+            color: #fff;
+            margin-left: 90px;
+        }
+
+        .screen-phone-menu-l
+        {
+            font-size: 44px;
+            margin-bottom: 80px;
+            position: relative;
+            cursor: pointer;
+            position: relative;
+            transition: padding .5s;
+        }
+
+        .screen-phone-menu-l:last-child
+        {
+            margin-bottom: 0;
+        }
+
+        .screen-phone-menu-l:hover{padding-left: 42px;}
+
+         .screen-phone-menu-l:hover::before
+         {
+            content: "";
+            background: url(img/line.png);
+            width: 64px;
+            height: 115px;
+            display: inline-block;
+            position: absolute;
+            left: -28px;
+            bottom: -28px;
+         }
+      
+
+         .screen-phone-autor
+         {
+            margin-left: 90px;
+            margin-top:130px;
+         }
+
+         .screen-phone-autor-caption
+         {
+            color: #fdfdfd;
+            margin-top: 8px;
+            font-size: 25px;
+         }
+
+         .screen-phone-autor-par
+         {
+            color: #bdcadb;
+            margin-top: 0px;
+         }
+    </style>
+
+</head>
+<body>
+   <div id = "example"></div>
+
+   <script type="text/babel">
+    const exa = document.getElementById("example");
+
+    var ListContact = React.createClass(
+        {
+            render:function()
+            {
+                return(
+                    <ul className = "screen-phone-menu">
+                        <li className = "screen-phone-menu-l">Inbox</li>
+                        <li className = "screen-phone-menu-l">Stats</li>
+                        <li className = "screen-phone-menu-l">Calendar</li>
+                        <li className = "screen-phone-menu-l">Map</li>
+                        <li className = "screen-phone-menu-l">Settings</li>
+                    </ul>
+                );
+            }
+        }
+    ) ,
+
+
+
+
+
+        Autor = React.createClass(
+            {
+                render:function()
+                {
+                    return(
+                       <div className = "screen-phone-autor">
+                            <img className = "screen-phone-autor-img" src = "img/girl.png" alt="girl" />
+                            <h4 className = "screen-phone-autor-caption">Detra Mcmunn</h4>
+                            <p className = "screen-phone-autor-par">Long Beach, CA</p>
+                       </div>
+                    );
+                }
+            }
+        );
+
+
+
+
+
+    ReactDOM.render(
+    <main>
+        <div className = "container">
+            <div className = "screen-phone">
+                <ListContact/>
+                <Autor/>
+            </div>
+        </div>
+    </main>
+    ,
+    exa
+    );
+
+   </script>
+</body>
+</html>
