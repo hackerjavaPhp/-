@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>les..31_dz</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type = "text/javascript">
+
+var randomArray = new Array(10);	
+
+
+
+function randToFrom(mass, from, to)
+{
+	for(var i = 0 ; i < mass.length  ; i++)
+	{
+
+	var rand = Math.round(Math.random() * (to - from + 1) + from);
+
+	mass[i] = rand;
+	}
+
+	return mass;
+
+}
+
+
+
+document.write(randToFrom(randomArray, 0 , 100));	
+
+</script>﻿
+</script>﻿
+</body>
+</html>
