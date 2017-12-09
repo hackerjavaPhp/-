@@ -1,0 +1,30 @@
+
+var forTime = new Date();
+
+var year = forTime.getFullYear();
+
+	document.write("ГОД ->" + year + "<br>");
+
+var month = forTime.getMonth();
+
+	document.write("Месяц ->" + ++month + "<br>");
+
+var day = forTime.getDate();
+
+	document.write("день ->" + day + "<br>");
+
+var dayWeek = forTime.getDay();
+
+	document.write("день недели ->" + dayWeek + "<br>");
+
+var hour = forTime.getHours();
+
+	document.write("час ->" + hour + "<br>");
+
+var minutes = forTime.getMinutes();
+
+	document.write("Минуты ->" + minutes + "<br>");
+
+var seconds = forTime.getSeconds();
+
+	document.write("секунды ->" + seconds + "<br>");	
