@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>les..33_dz</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type = "text/javascript">
+
+; (function(){
+
+
+
+
+
+
+
+
+// variable
+
+var now = new Date() , 
+	ARDAY = (1000 * 60 * 60 * 24) , 
+	du = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"] ,
+	mouth = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август","Сентябрь", "Октябрь", "Ноябрь", "Декабрь"] ,
+	doc = document;
+
+
+
+
+
+// function 
+
+
+// Date ? 2
+
+function getDateNext(num)
+{
+	var dateNow = now.getTime() / ARDAY , 
+		dateTo ,
+		dateTo = (dateNow + num) ,
+
+	// create obj Date
+
+		dateNowObg = new Date(dateNow * ARDAY) ,
+		dateToObg = new Date(dateTo * ARDAY);
+
+
+		forGetDateNext(dateNowObg, dateToObg, num);
+
+}
+
+
+// write Date 3
+
+function forGetDateNext(from, to, num)
+{
+	doc.write("Через " + num + " дней будет вот такая дата: " + to.getDate() + "<br>");
+	doc.write("День недели: " + du[to.getDay()] + "<br>");
+	doc.write("Число: " + to.getDate() + "<br>");
+	doc.write("Месяц: " + mouth[to.getMonth()] + "<br>");
+	doc.write("Год: " + to.getFullYear());
+}
+
+// filter Date 1
+
+function filter(prom)
+{
+	prom = Number(prom);
+	if(prom < 1000 && 0 < prom)
+	{
+		alert("Молодцы!!!");
+
+		getDateNext(prom);
+	}
+	else
+	{
+		alert("Сорри!!!");
+	}
+}
+
+
+
+
+// start function
+
+
+var prom = prompt("Нужно вписать число ?!", "");
+
+
+filter(prom);
+
+
+
+
+
+
+
+
+
+
+
+})()
+</script>﻿
+</script>﻿
+</body>
+</html>

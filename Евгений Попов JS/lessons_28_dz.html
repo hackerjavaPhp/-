@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>les..28_dz</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type = "text/javascript">
+	var randSimbol = [10.5, 15, 112, 77.6] , 
+		doc = document;
+
+	function domText(text)
+	{
+		doc.write(text);
+	}
+
+
+	function forFixedNum(num)
+	{	
+		var mass = [];
+		
+		for(var i = 0 ; i < num.length ; i++)
+		{
+			mass.push(num[i].toFixed(2));
+		}
+
+		return mass;
+
+	}
+
+	domText(forFixedNum(randSimbol));
+</script>﻿
+</script>﻿
+</body>
+</html>

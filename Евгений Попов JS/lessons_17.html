@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>les..17</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type = "text/javascript">
+		
+		(function()
+		{
+
+			function letterCount(myString)
+			{
+				if(myString.length < 10)
+				{
+					var result = "менее 10 букв";
+				}
+				else if(myString.length > 10)
+				{
+					var result = "больше 10 букв";
+				}
+				else
+				{
+					var result = "10 букв";
+				}
+
+				return result;
+			}
+
+			var userWord = prompt("Введите слово", "");
+
+			document.write(letterCount(userWord));
+
+		})()
+
+</script>﻿
+</script>﻿
+</body>
+</html>

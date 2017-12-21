@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>les..28_dz</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type = "text/javascript">
+	
+var numberArray = [34.82, 12.90, 17.01, 78.51] , 
+	doc = document;
+
+
+
+
+
+
+
+// Main function 
+
+
+function MathRobot(mass, pr)
+{
+	switch(pr)
+	{
+		case "round": return forRound(mass);break;
+		case "ceil": return forCeil(mass);break;
+		case "floor": return forFloor(mass);break;
+	}
+
+
+	// functions for main function
+
+
+	// 1.1
+	function forRound(mass)
+	{
+		var massReturn = [];
+		for(var i = 0 ; i < mass.length; i++)
+		{
+			massReturn.push(Math.round(mass[i]));
+		}
+
+		return massReturn;		
+	}
+
+
+	// 1.2
+	function forCeil(mass)
+	{
+		var massReturn = [];
+		for(var i = 0 ; i < mass.length; i++)
+		{
+			massReturn.push(Math.ceil(mass[i]));
+		}
+
+		return massReturn;
+	}
+
+
+	// 1.3
+	function forFloor(mass)
+	{
+		var massReturn = [];
+		for(var i = 0 ; i < mass.length; i++)
+		{
+			massReturn.push(Math.floor(mass[i]));
+		}
+
+		return massReturn;
+	}
+
+
+}
+
+
+// Strat functions
+
+// 1.
+doc.write(MathRobot(numberArray, "round") + "<br>");
+doc.write(MathRobot(numberArray, "floor") + "<br>");
+doc.write(MathRobot(numberArray, "ceil") + "<br>");
+
+
+
+
+
+</script>﻿
+</script>﻿
+</body>
+</html>

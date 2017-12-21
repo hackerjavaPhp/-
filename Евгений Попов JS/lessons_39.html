@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>les..33_dz</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type = "text/javascript">
+
+; (function(){
+
+
+var summaTour = {
+
+	// price
+	turkey: 2000, 
+	spain: 3000,
+	egypt: 1000
+
+};
+
+summaTour.calc = function(peoples, days, country)
+{
+	var result = peoples * days * this[country] ;
+
+	return result + " руб";
+}
+
+document.write(summaTour.calc(2, 14, "egypt"));
+
+
+})()
+</script>﻿
+</script>﻿
+</body>
+</html>

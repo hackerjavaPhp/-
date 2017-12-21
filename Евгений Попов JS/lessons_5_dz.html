@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>JS</title>
+  <meta charset = "UTF-8">
+  <script></script>
+ </head>
+ <body>
+  <script type = "text/javascript">
+  var doc = document ,
+      mass_fructs = ['апельсин', 'банан', 'груша'];
+
+
+  function show_length(mass)
+  {
+      doc.write("Длинна массива => " + mass.length + "<br>");
+      console.log("Длинна массива => " + mass.length);
+  }
+    // function start
+     show_length(mass_fructs); 
+
+
+        mass_fructs.push("яблоко");
+        mass_fructs.push("ананас");
+        mass_fructs.unshift("грейпфрут");
+
+
+    // function start
+     show_length(mass_fructs); 
+
+      mass_fructs.shift();
+      mass_fructs.pop();
+
+
+      
+    // function start
+     show_length(mass_fructs);
+
+
+
+  </script>
+ </body>
+</html>﻿

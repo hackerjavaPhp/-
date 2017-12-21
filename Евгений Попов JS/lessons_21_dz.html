@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>les..20</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type = "text/javascript">
+
+  var students = ["Илья","Greg", "Алина", "rterterter"];
+
+   for(var i = 0 ; i < students.length ; i++)
+   {
+   		str_func(students[i]);
+   }
+	
+
+   function str_func(str)
+   {	
+   		for(var i = 0 ; i < str.length; i++)
+   		{
+	   		if(str.charCodeAt(i) < 1040 || str.charCodeAt(i) > 1103 || str.charCodeAt(i) == 32)
+	   		{
+	   			document.write("Слово -> "+ str + "код буквы -> " + str.charCodeAt(i) + "Буква -> " + str.charAt(i) + "<br>");
+	   		}
+
+   		}
+   }
+
+
+
+</script>﻿
+</script>﻿
+</body>
+</html>

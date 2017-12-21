@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>les..32_dz</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type = "text/javascript">
+
+
+
+
+function getDate()
+{
+
+
+
+
+	var forTime = new Date() , 
+	year = forTime.getFullYear() ,
+	month = forTime.getMonth() + 1 ,
+    day = forTime.getDate() ,
+    dayWeek = forTime.getDay() ,
+    hour = forTime.getHours() ,
+    minutes = forTime.getMinutes() ,
+    seconds = forTime.getSeconds() ,
+    num = 10;
+
+
+    
+
+
+
+    if(hour < num)
+    {
+    	hour = "0" + hour;
+    }
+
+
+    if(minutes < num)
+    {
+    	minutes = "0" + minutes;
+	}
+
+
+	if(seconds < num)
+	{
+    	seconds = "0" + seconds;
+	}
+
+
+	return (hour + " : " + minutes + " : " + seconds);
+}
+
+document.write(getDate()
+);
+
+</script>﻿
+</script>﻿
+</body>
+</html>

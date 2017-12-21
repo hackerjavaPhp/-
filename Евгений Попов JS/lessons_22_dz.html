@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>les..22</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type = "text/javascript">
+
+	var forTesting = "8 пингвинов и 9 карасей." , 
+		variable = /^\d/ ,
+		result_f;
+
+	function func_RegV(str_regV, regV)
+	{
+		return str_regV.search(regV);
+	}
+
+	function func_answer_fr(res)
+	{
+		if(res >= 0)
+		{
+			return "Good";
+		}
+		else
+		{
+			return "Bad";
+		}
+	}
+
+	
+    result_f = func_answer_fr(func_RegV(forTesting, variable));
+
+	document.write(result_f);
+</script>﻿
+</script>﻿
+</body>
+</html>
