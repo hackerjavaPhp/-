@@ -1,0 +1,17 @@
+; $(document).ready(function(){
+
+	$(".js_header_link").on("click", function(e){
+
+		e.preventDefault();
+
+
+		var hrefDw = $(this).attr("href"), 
+			scrollTopCus = $(hrefDw).offset().top;
+
+			$("html, body").animate({
+   				scrollTop: scrollTopCus
+   			}, 1000);
+	});
+
+
+})
