@@ -8,19 +8,19 @@
 			listGood = "active",
 			$thisHref = $this.attr("href");
 
-			if(!$this.hasClass(listGood)){
+			if(!$this.hasClass(listGood) ){
 				$(".js-faq-content").slideUp();
-				$($this).removeClass("active");
+				$(".js-faq-title").removeClass(listGood);
 			}
 
-			$($this).toggleClass("active");
+			$this.toggleClass(listGood);
 			$($thisHref).slideToggle();
-			
-
-		
 
 	});
 
+
+
+	// 
 
 
 });
