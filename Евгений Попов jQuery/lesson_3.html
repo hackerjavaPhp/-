@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lesson 3 jQuery</title>
+	<meta charset="utf-8">
+		<!-- scripts -->
+	<script type="text/javascript" src="jQuery/jquery-3.2.1.min.js"></script>
+</head>
+
+<style type="text/css">
+		
+		body
+		{
+			background: red;
+		}
+
+		.block:first-child
+		{
+			overflow: hidden;
+		}
+
+</style>
+
+<body>
+
+
+	
+	<ul class="list">
+
+		<li class="list-li">
+
+			<a class="list-li-link" href="#">lists</a>
+
+		</li>
+
+		<li class="list-li">
+
+			<a class="list-li-link" href="#">lists</a>
+
+		</li>
+
+		<li class="list-li">
+
+			<a class="list-li-link" href="#">lists</a>
+
+		</li>
+
+		<li class="list-li">
+
+			<a class="list-li-link" href="#">lists</a>
+
+		</li>
+
+		<li class="list-li">
+
+			<a id = "link" class="list-li-link" href="#">lists</a>
+
+		</li>
+
+
+	</ul>
+
+
+	<div>
+		
+		<img src="https://avatarko.ru/img/kartinka/1/cherep_uzhasy_griby.jpg">
+
+		<img src="https://avatarko.ru/img/kartinka/1/cherep_uzhasy_griby.jpg">
+
+		<img src="https://avatarko.ru/img/kartinka/1/cherep_uzhasy_griby.jpg">
+
+
+	</div>
+
+
+	
+	<div>text</div>
+	<div>text</div>
+	<div>text</div>
+	<div>text</div>
+	<div>text</div>
+
+	<div class="block"></div>
+
+	<div class="block">
+		
+
+		<img src="https://us.123rf.com/450wm/nrey/nrey1407/nrey140700053/30027417-the-human-skull-on-fire.jpg"
+		alt="image-1">
+		<img src="https://us.123rf.com/450wm/nrey/nrey1407/nrey140700053/30027417-the-human-skull-on-fire.jpg"
+		alt="image-2">
+		<img src="https://us.123rf.com/450wm/nrey/nrey1407/nrey140700053/30027417-the-human-skull-on-fire.jpg"
+		alt="image-3">
+
+	</div>
+
+	<script type="text/javascript">
+			
+		$(document).ready(function(){
+
+			for(var i = 0 ; i < 100 ; i++){
+
+				document.write(i);
+
+			}
+
+		});	
+	
+	</script>
+</body>
+</html>

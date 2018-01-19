@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lesson 19 jQuery</title>
+	<meta charset="utf-8">
+
+	<style>
+
+		.btn-def
+		{
+			width: 200px;
+			height: 40px;
+			border: 0;
+			font-size: 20px;
+			color: #fff;
+			text-transform: uppercase;
+			transition: background 1s;
+			border-radius: 5px;
+			cursor: pointer;
+
+		}
+		
+
+		.btn-color-1
+		{
+			background: purple;
+		}	
+
+
+		.btn-color-2
+		{
+			background: red;
+		}
+
+
+		.btn-color-3
+		{
+			background: green;
+		}
+
+
+		#b-link
+		{
+			color: red;
+			font-size: 20px;
+		}
+
+	</style>
+</head>
+
+<body>
+		<button id = "btn-click" class = "btn-def btn-color-1">click</button>
+
+		<a target="_blank" id = "b-link" href="https://www.apple.com">continuo site apple</a>
+		<!-- scripts -->
+	<script type="text/javascript" src="jQuery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+	
+		;
+
+		$("#btn-click").hover(function(){
+
+			$(this).toggleClass("btn-color-1");
+			$(this).toggleClass("btn-color-2");
+			$(this).removeClass("btn-color-3");
+		});
+
+
+		$("#btn-click").click(function(e){
+
+			$(this).toggleClass("btn-color-3");
+
+			console.log(e.screenX);
+			console.log(e.screenY);
+
+		})
+
+		$("#b-link").click(function(e){
+
+			e.preventDefault();
+
+		});
+
+
+	</script>
+</body>
+</html>

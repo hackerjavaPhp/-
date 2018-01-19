@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lesson 6 jQuery</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+			
+			.images
+			{
+				width: 500px;
+				border: 6px solid #555;
+				border-radius: 5px;
+			}
+
+	</style>
+</head>
+
+<body>
+
+	<img class = "images" src="http://autoshaker.ru/wp-content/gallery/%D0%BE%D0%B1%D0%BE%D0%B8-BMW-5-%D0%B539/%D0%A4%D0%BE%D1%82%D0%BE-%D0%B539-21.jpg">
+
+		<!-- scripts -->
+	<script type="text/javascript" src="jQuery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+			
+		var result =  $(".images").width();
+
+		console.log(result);
+
+			result =  $(".images").width(300);
+
+		console.log(result);
+
+			result =  $(".images").height(200);
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lesson 10 jQuery</title>
+	<meta charset="utf-8">
+
+	<style type="text/css">
+		
+		.show1
+		{background: red}
+
+		.show2
+		{background: orange}
+
+	</style>
+
+</head>
+
+<body>
+	
+	<h1 id="elementID" class = "show1">ASUS ZENFONE 5</h1>
+
+
+		<!-- scripts -->
+	<script type="text/javascript" src="jQuery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		
+		var num = $("#elementID").fadeOut(3000).fadeIn(2000).removeAttr("class").attr("class", "show2");
+
+
+
+
+
+	</script>
+</body>
+</html>

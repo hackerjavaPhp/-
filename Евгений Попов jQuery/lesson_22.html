@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lesson 22 jQuery</title>
+	<meta charset="utf-8">
+
+	<style>
+
+		#bigPhoto
+		{
+			background: #555;
+			height: 200px;
+		}
+
+	</style>
+</head>
+
+<body>
+		<div id="bigPhoto">
+			<img src="image/1.png">
+		</div>
+
+		<div id="smallPhoto">
+			<a href="image/1.png"><img src="image/1.png"></a>
+			<a href="image/2.png"><img src="image/2.png"></a>
+			<a href="image/3.png"><img src="image/3.png"></a>
+			<a href="image/4.png"><img src="image/4.png"></a>
+			<a href="image/5.png"><img src="image/5.png"></a>
+		</div>
+
+		
+		<!-- scripts -->
+	<script type="text/javascript" src="jQuery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+	
+		$(document).ready(function(){
+ 
+			$('#smallPhoto a').click(function(e){
+
+				e.preventDefault();
+
+				$("#bigPhoto img").hide().attr("src", $(this).attr("href")).fadeIn();
+
+
+
+
+			})
+
+		})
+
+	</script>
+</body>
+</html>

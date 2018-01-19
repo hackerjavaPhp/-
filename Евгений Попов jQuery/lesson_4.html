@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lesson 4 jQuery</title>
+	<meta charset="utf-8">
+</head>
+
+<body>
+
+
+	<h1 id = "textID">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</h1>
+
+
+	<img id = "imageID" style = "width: 400px" src="http://humor.fm/uploads/posts/2016-03/09/gmrqhqfk3ie.jpg">
+
+	
+
+
+
+
+		<!-- scripts -->
+	<script type="text/javascript" src="jQuery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+			
+		var result = $("#textID").text("Vlad Scherbacheny");
+
+			console.log(result);
+
+		result = $("#imageID").hide(3000).show(3000);
+
+	</script>
+</body>
+</html>

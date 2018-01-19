@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lesson 22 jQuery</title>
+	<meta charset="utf-8">
+
+	<style>
+
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		body, html
+		{
+			width: 100%;
+			height: 100%;
+		}
+
+		section
+		{
+			width: 100%;
+			height: 100%;
+		}
+
+		.bg-default
+		{
+			background: #999;
+		}
+
+		.bg-default-2
+		{
+			background: orange;
+		}
+
+
+	</style>
+</head>
+
+<body>
+		<section class="bg-default">
+			
+			<form>
+				<input type="radio" name="r" value="vlad">
+				<input type="radio" name="r" value="vlad2">
+				<input type="submit" value="отправить">
+			</form>
+
+		</section>
+
+		<!-- scripts -->
+	<script type="text/javascript" src="jQuery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+	
+	$("form:radio:checked").fadeOut();
+
+	</script>
+</body>
+</html>

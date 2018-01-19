@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lesson 16 jQuery</title>
+	<meta charset="utf-8">
+</head>
+
+<body>
+	
+	<h1 id = "contentId">Why do we use it?</h1>
+
+
+	<div id = "block-images">
+		<img style="width: 500px;margin: 20px" src="https://corp2.info/wp-content/uploads/2016/09/google-hummingbird1.jpg" alt="parent-1">
+		<img style="width: 500px;margin: 20px" src="https://corp2.info/wp-content/uploads/2016/09/google-hummingbird1.jpg" alt="parent-2">
+		<img style="width: 300px;margin: 20px" src="https://corp2.info/wp-content/uploads/2016/09/google-hummingbird1.jpg" alt="parent-3">
+	</div>
+
+		<!-- scripts -->
+	<script type="text/javascript" src="jQuery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+	
+		;
+
+		jQuery("img").each(function(){
+
+			if(jQuery(this).width() > 400)
+			{
+				jQuery(this).fadeOut(3000);
+				jQuery(this).fadeIn(3000);
+			}
+
+		});
+	</script>
+</body>
+</html>
