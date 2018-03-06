@@ -1,0 +1,23 @@
+function var_type($var) {
+    switch ($var) {
+        case is_bool($var): $result = "Boolean";
+        break;
+        case is_integer($var): $result = "Integer";
+        break;
+        case is_double($var): $result = "Duble";
+        break;
+        case is_string($var): $result = "Stirng";
+        break;
+        case is_object($var): $result = "Object";
+        break;
+        case is_array($var): $result = "Array";
+        break;
+        case is_resource($var): $result = "Resource";
+        break;
+        case is_null($var): $result = "Null";
+        break;
+    }
+
+    return $result;
+
+}
